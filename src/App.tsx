@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import { IMessage } from "./models/message.model";
 import { getMessages, sendMessage } from "./server/messages";
@@ -40,7 +39,7 @@ function App() {
 			</form>
 			{messages.map((message) => {
 				return (
-					<div key={message._id}>
+					<div key={message._id || message.id}>
 						<h3>{message.title}</h3>
 						<p>{message.body}</p>
 						<hr />
